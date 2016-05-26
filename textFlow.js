@@ -8,7 +8,7 @@ function flowForRound( text, lines )
 	var output = "";
 
 	for ( var i = 0; i < text.length; i++ )
-	{		
+	{
 		// All lines except last
 		if ( i < lines.length - 1 )
 		{
@@ -20,10 +20,10 @@ function flowForRound( text, lines )
 		else
 		{
 			// If final line fits perfectly
-			if(text.substr(lines[ i ] + 1) === '')
+			if ( text.substr( lines[ i ] + 1 ) === '' )
 			{
 				output += text.substr( 0, lines[ i ] ).trim();
-			}			
+			}
 			// If final line needs ellipsis, but words fit
 			else if ( text.substr( 0, lines[ i ] ).trim().length <= lines[ i ] - 3 )
 			{
@@ -34,7 +34,7 @@ function flowForRound( text, lines )
 			{
 				output += text.substr( 0, lines[ i ] - 3 ).trim() + "...";
 			}
-			
+
 			break;
 		}
 	}
